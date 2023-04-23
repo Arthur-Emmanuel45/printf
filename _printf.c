@@ -7,7 +7,6 @@
  */
 int _printf(const char *format, ...)
 {
-
 	unsigned int i = 0, count = 0, value;
 
 	va_list li;
@@ -44,11 +43,8 @@ int _printf(const char *format, ...)
 			print_i_int(va_arg(li, int));
 			i++;
 		}
-
 		count += 1;
 	}
-
 	va_end(li);
-
 	return (count);
 }
