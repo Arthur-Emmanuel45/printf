@@ -19,7 +19,5 @@ int print_str(char *c)
 		}
 	}
 
-	_putchar('\n');
-
 	return (count);
 }
