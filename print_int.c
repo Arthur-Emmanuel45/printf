@@ -4,10 +4,10 @@
  * @n:the interger to print
  * Return:an interger
  */
-int print_int(long n)
+long print_int(long n)
 {
 
-	int count;
+	long int count;
 
 	if (n < 0)
 	{
