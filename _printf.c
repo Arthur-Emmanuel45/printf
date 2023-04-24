@@ -16,10 +16,10 @@ int _printf(const char *format, ...)
 	for (; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
-			_putchar(format[i + 1]);
+			_putchar(format[i]);
 		else if (format[i + 1] == 'c')
 		{
-			_putchar(va_arg(li, int));
+			_putchar(va_arg(li, char));
 			i++;
 		}
 		else if (format[i + 1] == 's')
