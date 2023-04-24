@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 		{
-			print_int(va_arg(li, int));
+			count += print_int(va_arg(li, int));
 			i++;
 		}
 		count += 1;
