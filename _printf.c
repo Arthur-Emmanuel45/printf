@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 		else if (format[i + 1] == 'c')
 		{
-			_putchar(va_arg(li, char));
+			_putchar(va_arg(li, int));
 			i++;
 		}
 		else if (format[i + 1] == 's')
