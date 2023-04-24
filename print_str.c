@@ -9,7 +9,7 @@ int print_str(char *c)
 	int i = 0;
 	int count = 0;
 
-	if (c)
+	if (c != '\0')
 	{
 		while (c[i] != '\0')
 		{
