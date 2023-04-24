@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	for (; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
-			_putchar(format[i]);
+			_putchar(format[i + 1]);
 		else if (format[i + 1] == 'c')
 		{
 			_putchar(va_arg(li, int));
