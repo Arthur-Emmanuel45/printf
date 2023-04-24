@@ -4,7 +4,7 @@
  * @n:the interger to print
  * Return:an interger
  */
-int print_i_int(int n)
+int print_i_int(long n)
 {
 
 	int count;
