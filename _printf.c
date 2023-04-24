@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == '%')
 		{
-			_putchar(format[i]);
+			_putchar(va_arg(li, int));
 			i++;
 		}
 		else if (format[i + 1] == 'd' || format[i + 1] == 'i')
