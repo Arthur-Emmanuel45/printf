@@ -15,7 +15,7 @@ int print_int(int n)
 		_putchar('-');
 		n = -n;
 	}
-	else
+	if (n / 10)
 	{
 		count += 1;
 		print_int(n / 10);
