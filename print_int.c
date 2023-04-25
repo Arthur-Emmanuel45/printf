@@ -17,7 +17,7 @@ int print_int(int n)
 	}
 	if (n / 10)
 	{
-		count += 1
+		count += 1;
 		print_int(n / 10);
 	}
 
