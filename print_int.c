@@ -4,14 +4,12 @@
  * @n:the interger to print
  * Return:an interger
  */
-void print_int(int n)
+int print_int(int n)
 {
+	int count = 0;
 
-	/*
-	*int count = 0;
-	*if (n == 0)
-	*	return (0);
-	*/
+	if (n == 0)
+		return (0);
 	if (n < 0)
 	{
 		_putchar('-');
@@ -19,7 +17,7 @@ void print_int(int n)
 	}
 	else
 	{
-		/*count += 1;*/
+		count += 1;
 		print_int(n / 10);
 	}
 
