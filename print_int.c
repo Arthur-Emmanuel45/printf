@@ -6,6 +6,7 @@
  */
 int print_int(int n)
 {
+	int count = 0;
 
 	if (n == 0)
 		return (0);
@@ -19,5 +20,9 @@ int print_int(int n)
 		print_int(n / 10);
 	}
 
-	return (_putchar(n % 10 + '0');)
+	count += 1;
+
+	_putchar(n % 10 + '0');
+
+	return (count);
 }
