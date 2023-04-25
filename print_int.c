@@ -9,13 +9,13 @@ int print_int(int n)
 
 	int count = 0;
 
+	if (n == 0)
+		return (0);
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
-	if (n == 0)
-		return(0);
 	else
 	{
 		count += 1;
