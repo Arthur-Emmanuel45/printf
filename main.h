@@ -1,5 +1,5 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <limits.h>
 #include <stdarg.h>
@@ -43,7 +43,8 @@ typedef struct buffer_s
 typedef struct converter_s
 {
 	unsigned char specifier;
-	unsigned int (*func)(va_list, buffer_t *,unsigned char, int, int, unsigned char);
+	unsigned int (*func)(va_list, buffer_t *,
+			unsigned char, int, int, unsigned char);
 } converter_t;
 
 /**

@@ -21,6 +21,7 @@ void cleanup(va_list args, buffer_t *output)
  * @format: Character string to print - may contain directives.
  * @output: A buffer_t struct containing a buffer.
  * @args: A va_list of arguments.
+ *
  * Return: The number of characters stored to output.
  */
 int run_printf(const char *format, va_list args, buffer_t *output)
@@ -29,7 +30,7 @@ int run_printf(const char *format, va_list args, buffer_t *output)
 	char tmp;
 	unsigned char flags, len;
 	unsigned int (*f)(va_list, buffer_t *,
-	unsigned char, int, int, unsigned char);
+			unsigned char, int, int, unsigned char);
 
 	for (i = 0; *(format + i); i++)
 	{
