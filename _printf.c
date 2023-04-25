@@ -15,8 +15,10 @@ int _printf(const char *format, ...)
 
 	for (; format[i] != '\0'; i++)
 	{
-		if (format[i] != '%');
+		if (format[i] != '%')
+		{
 			_putchar(format[i]);
+		}
 		else if (format[i + 1] == 'c')
 		{
 			_putchar(va_arg(li, int));
@@ -30,16 +32,16 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == '%')
 		{
-			_putchar('%'));
+			_putchar('%');
 			i++;
 		}
-		else if (format[i + 1] == 'd' || format[i + 1] == 'i')
+		else if (format[i + 11] == 'd' || format[i + 1] == 'i')
 		{
 			count += print_int(va_arg(li, int));
 			i++;
 		}
 		count += 1;
 	}
-	va_end(li);
 	return (count);
+	va_end(li);
 }
