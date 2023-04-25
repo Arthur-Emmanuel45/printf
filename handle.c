@@ -79,7 +79,6 @@ unsigned char handle_length(const char *modifier, char *index)
  * @args: A va_list of arguments.
  * @modifier: A pointer to a potential width modifier.
  * @index: An index counter for the original format string.
- *
  * Return: If a width modifier is matched - its value.
  *         Otherwise - 0.
  */
@@ -159,9 +158,7 @@ int handle_precision(va_list args, const char *modifier, char *index)
 
 /**
  * handle_specifiers - Matches a conversion specifier with
- *                     a corresponding conversion function.
  * @specifier: A pointer to a potential conversion specifier.
- *
  * Return: If a conversion function is matched - a pointer to the function.
  *         Otherwise - NULL.
  */
