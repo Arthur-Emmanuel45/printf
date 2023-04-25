@@ -17,8 +17,8 @@ int print_int(int n)
 	}
 	if (n / 10)
 	{
+		count += 1
 		print_int(n / 10);
-		count += 1;
 	}
 
 	_putchar(n % 10 + '0');
