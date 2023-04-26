@@ -4,8 +4,7 @@
  * _precision - Calculates the precision for printing
  * @format: Formatted string in which to print the arguments
  * @i: List of arguments to be printed.
- * @list: list of arguments.
- *
+ * @li: list of arguments.
  * Return: Precision.
  */
 int _precision(const char *format, int *i, va_list li)
