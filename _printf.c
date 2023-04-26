@@ -1,45 +1,65 @@
 #include "main.h"
+
+void _buffer(char buffer[], int *buff_int);
+
 /**
- *_printf-produce the prinft lib
- *@format:first the string
- *@...:other arg
- *Return:count of the output
+ * _printf-print as the printf lib
+ * @format:first string
+ * Return:arguments.
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, count = 0, value;
-
+	int i, p_char = 0, str = 0;
+	int flags, width, precision, size, buff_int = 0;
 	va_list li;
+	char buffer[BUFF_SIZE];
+
+	if (format == NULL)
+		return (-1);
 
 	va_start(li, format);
 
-	for (; format[i] != '\0'; i++)
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
-			_putchar(format[i]);
-		else if (format[i + 1] == 'c')
 		{
-			_putchar(va_arg(li, int));
-			i++;
+			buffer[buff_int++] = format[i];
+			if (buff_int == BUFF_SIZE)
+				_buffer(buffer, &buff_int);
+			p_char++;
 		}
-		else if (format[i + 1] == 's')
+		else
 		{
-			value = print_str(va_arg(li, char*));
-			i++;
-			count += (value - 1);
+			_buffer(buffer, &buff_int);
+			flags = _flags(format, &i);
+			width = _width(format, &i, li);
+			precision = _precision(format, &i, li);
+			size = _size(format, &i);
+			++i;
+			str = _handle(format, &i, li, buffer,
+				flags, width, precision, size);
+			if (str == -1)
+				return (-1);
+			p_char += str;
 		}
-		else if (format[i + 1] == '%')
-		{
-			_putchar('%');
-			i++;
-		}
-		else if (format[i + 1] == 'd' || format[i + 1] == 'i')
-		{
-			count += print_int(va_arg(li, int));
-			i++;
-		}
-		count += 1;
 	}
+
+	_buffer(buffer, &buff_int);
+
 	va_end(li);
-	return (count);
+
+	return (p_char);
+}
+
+/**
+ * _buffer-Prints the char in a buffer
+ * @buffer:array of char
+ * @buff_int:len of a buffer
+ */
+void _buffer(char buffer[], int *buff_int)
+{
+	if (*buff_int > 0)
+		write(1, &buffer[0], *buff_int);
+
+	*buff_int = 0;
 }

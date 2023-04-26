@@ -1,27 +1,43 @@
 #include "main.h"
 /**
- * print_int-print interger variables
- * @n:the interger to print
- * Return:an interger
+ * convert_d - Prints a percentage
+ * @types: List of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:flags
+ * @width:Width
+ * @precision:Precision
+ * @size:Size
+ * Return:an intergers
  */
-int print_int(int n)
+int convert_d(va_list types, char buffer[],
+        int flags, int width, int precision, int size)
 {
-	int count = 0;
+        int i = BUFF_SIZE - 2;
+        int is_negative = 0;
+        long int n = va_arg(types, long int);
+        unsigned long int num;
 
-	if (n == 0)
-		return (0);
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-	}
-	else
-	{
-		count += 1;
-		print_int(n / 10);
-	}
+        n = convert_size_number(n, size);
 
-	_putchar(n % 10 + '0');
+        if (n == 0)
+                buffer[i--] = '0';
 
-	return (count);
+        buffer[BUFF_SIZE - 1] = '\0';
+        num = (unsigned long int)n;
+
+        if (n < 0)
+        {
+                num = (unsigned long int)((-1) * n);
+                is_negative = 1;
+        }
+
+        while (num > 0)
+        {
+                buffer[i--] = (num % 10) + '0';
+                num /= 10;
+        }
+
+        i++;
+
+        return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }
