@@ -74,8 +74,8 @@ int convert_p(va_list types, char buffer[],
 
 /*prototypes for flags*/
 int _flags(const char *format, int *i);
-int _width(const char *format, int *i, va_list list);
-int _precision(const char *format, int *i, va_list list);
+int _width(const char *format, int *i, va_list li);
+int _precision(const char *format, int *i, va_list li);
 int _size(const char *format, int *i);
 
 /*prototype for reverse string*/
