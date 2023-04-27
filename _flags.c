@@ -4,9 +4,10 @@
  * _flags -This Calculates active flags
  * @format:The  Formatted string in which to print the arguments
  * @i: take a parameter.
+ * @li: list of arguments.
  * Return: Flags:
  */
-int _flags(const char *format, int *i)
+int _flags(const char *format, int *i, va_list li)
 {
 	int j, curr_int;
 	int flags = 0;

@@ -4,9 +4,10 @@
  * _size - Calculates the size to cast the argument
  * @format: Formatted string in which to print the arguments
  * @i: List of arguments to be printed.
+ * @li: list of arguments.
  * Return: Precision.
  */
-int _size(const char *format, int *i)
+int _size(const char *format, int *i, va_list li)
 {
 	int curr_int = *i + 1;
 	int size = 0;
