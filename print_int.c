@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * convert_d - Prints a percentage
+ * convert_d - Prints an interger
  * @types: List of arguments
  * @buffer: Buffer array to handle print
  * @flags:flags

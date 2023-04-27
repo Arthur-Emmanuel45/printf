@@ -39,6 +39,7 @@ int _printf(const char *format, ...);
 int _handle(const char *spec, int *x, va_list li, char buffer[],
 	int width, int size, int precision, int flags);
 
+/* prototype function to print character */
 int convert_c(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int convert_s(va_list types, char buffer[],
@@ -63,7 +64,7 @@ int convert_X(va_list types, char buffer[],
 int print_hexa(va_list types, char map_to[],
 char buffer[], int flags, char flag_ch, int width, int precision, int size);
 
-/* Function to print non printable characters */
+/* prototype function to print non printable characters */
 int convert_S(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 

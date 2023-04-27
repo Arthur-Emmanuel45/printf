@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * convert_c - Prints a char
+ * convert_c - Prints a character
  * @types: List of arguments
  * @buffer: Buffer array to handle print
  * @flags:flags
@@ -29,7 +29,7 @@ int convert_c(va_list types, char buffer[],
 int convert_s(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	int len = 0, i;
+	int i, len = 0;
 	char *str = va_arg(types, char *);
 
 	UNUSED(buffer);
