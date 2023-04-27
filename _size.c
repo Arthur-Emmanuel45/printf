@@ -7,7 +7,7 @@
  * @li: list of arguments.
  * Return: Precision.
  */
-int _size(const char *format, int *i, va_list li)
+int _size(const char *format, int *i)
 {
 	int curr_int = *i + 1;
 	int size = 0;

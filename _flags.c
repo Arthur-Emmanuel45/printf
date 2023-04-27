@@ -7,7 +7,7 @@
  * @li: list of arguments.
  * Return: Flags:
  */
-int _flags(const char *format, int *i, va_list li)
+int _flags(const char *format, int *i)
 {
 	int j, curr_int;
 	int flags = 0;
